@@ -1,1 +1,1 @@
-![capa]('./banner.png')
+![Banner]('./images/banner.png')
