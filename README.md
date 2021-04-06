@@ -1,1 +1,1 @@
-![Banner]('./images/banner.png')
+<img src="./images/banner.png" alt="Banner">
