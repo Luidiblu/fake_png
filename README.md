@@ -1,1 +1,1 @@
-![capa]('https://e7.pngegg.com/pngimages/82/660/png-clipart-trollface-internet-troll-rage-comic-homestuck-others-comics-face.png')
+![capa]('banner.png')
