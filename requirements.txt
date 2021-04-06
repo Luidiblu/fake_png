@@ -1,4 +1,4 @@
 Pillow==8.2.0
 requests==2.25.1
-pinterest-api==0.0.8
-imgur-uploader==0.3.0
+# pinterest-api==0.0.8
+# imgur-uploader==0.3.0

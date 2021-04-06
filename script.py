@@ -12,33 +12,30 @@ def get_image(url):
     '''
     return Image.open(requests.get(url, stream=True).raw)
 
-def post_img_imgur(image):
-    '''
-    Should post a image on Imgur and return the URL
-    '''
-    im_file = BytesIO()
-    image.save(im_file, format="PNG")
-    base64_image = im_file.getvalue()
+# def post_img_imgur(image):
+#     '''
+#     Should post a image on Imgur and return the URL
+#     '''
+#     im_file = BytesIO()
+#     image.save(im_file, format="PNG")
+#     base64_image = im_file.getvalue()
     
-    url = "https://api.imgur.com/3/image"
-    headers = {
-        "Authorization": "Client-ID"
-    }
-    data = {
-        "image": base64.,
-        "name": "PNG",
-        "title": "PNG",
-        "description": "PNG"
-    }
-    data={
-                'image': base64.b64encode(open(os.path.join(self.target_path, file_name), 'rb').read()),
-                'type': 'base64',
-                'name': file_name,
-            }
-    r = requests.post(url, headers=headers, data = data)
+#     url = "https://api.imgur.com/3/image"
+#     headers = {
+#         "Authorization": "Client-ID 546c25a59c58ad7"
+#     }
+#     data = {
+#         "image": base64_image,
+#         "type": "base64",
+#         "name": "PNG",
+#         "title": "PNG",
+#         "description": "PNG"
+#     }
 
-    print(r.text)
-    return r.raw
+#     r = requests.post(url, headers=headers, data=data)
+
+#     print(r.text)
+#     return r.raw
 # def post_img_pintrest(image):
 #     '''
 #     Should post a img
@@ -72,7 +69,7 @@ def scat_image(output,
     transparent.paste(real_png, position, mask=real_png)
     transparent.show()
     transparent.save(output)
-    return post_img_imgur(transparent)
+    # return post_img_imgur(transparent)
 
 if __name__ == '__main__':
     real_png_url = input('Please, the real png image: ')    
