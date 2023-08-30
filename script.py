@@ -6,17 +6,19 @@ import base64
 import requests
 
 
-def get_image(url):
+def get_image(url: str) -> Image:
     '''
-    Should get a png image from internet
-    https://pngtree.com/free-png
+    Fetches a png image from the given URL and returns it as an Image object.
     '''
     return Image.open(requests.get(url, stream=True).raw)
 
 
-def scat_image(output,
-               real_png_url,
-               position):
+def scat_image(output: str,
+               real_png_url: str,
+               position: tuple) -> None:
+    '''
+    Creates a white image with a chessboard pattern, resizes it, pastes a real PNG image on it at the given position, and saves the result.
+    '''
     
     real_png = get_image(real_png_url)
     w, h = real_png.size
@@ -37,6 +39,9 @@ def scat_image(output,
     transparent.save(output)
 
 if __name__ == '__main__':
+    '''
+    Takes user input for the real PNG URL and the output file name, and then calls the scat_image function with these inputs and a fixed position.
+    '''
     real_png_url = input('Please, the real URL png image: ')    
     img_output = input("Please, the output name (name will come with poisoned_YOUR_INPUT): ")
     scat_image(f'poisoned {img_output}.png',
